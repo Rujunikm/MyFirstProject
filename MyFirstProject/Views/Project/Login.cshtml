@@ -1,0 +1,36 @@
+﻿@model MyFirstProject.Models.SignUpLoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-4 offset-4 border border rounded pl-5 pr-5 pt-5 pb-5">
+            <div class="text-center">
+                <h1>Login Form</h1>
+            </div>
+            <div class="text-center">
+                <a class="text-light btn btn-primary font-weight-bold" asp-action="Registration" asp-controller="Project">Register Form</a>
+            </div>
+            <form method="post" asp-action="Login">
+            <div class="form-group">
+                <label asp-for="Username"></label>
+                <input type="text" asp-for="Username" class="form-control" autocomplete="off" placeholder="Enter Username" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input type="password" asp-for="Password" class="form-control" autocomplete="off" placeholder="Enter Password" />
+            </div>
+            <br />
+
+                <input type="button" form="form2" value="Login" class="btn btn-block btn-primary mb-2" background-color:green;" />
+            </form>
+            <div class="text-center">
+                <a class="text-primary" asp-action="ForgetUserName">Forget UserName?</a>
+                <a class="text-primary" asp-action="ForgetPassword">Forget Password?</a>
+            </div>
+        </div>
+    </div>
+</div>
+

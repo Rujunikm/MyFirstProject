@@ -1,0 +1,83 @@
+﻿@model MyFirstProject.Models.SignUpLoginViewModel
+@{
+    ViewData["Title"] = "Registration";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+    <h1>User Registration Form</h1>
+
+
+<div class="container" style="padding:5%">
+    <div class="row">
+        <div class="col-6 offset-3 border border rounded pl-5 pr-5 pb-5">
+            <form method="post" asp-action="Registration">
+                <div class="form-group">
+                    <label asp-for="Username"></label>
+                    <input type="text" asp-for="Username" class="form-control" placeholder="Enter username" autocomplete="off" required />
+                </div>
+                <div class="form-group">
+                        <label asp-for="Fname"></label>
+                          <input type="text" asp-for="Fname" class="form-control" placeholder="Enter First name" autocomplete="off" required/>
+                </div>
+                    <div class="form-group">
+                        <label asp-for="Lname"></label>
+                        <input type="text" asp-for="Lname" class="form-control" placeholder="Enter Last name" autocomplete="off"/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input type="email" asp-for="Email" class="form-control" placeholder="Enter Email" autocomplete="off" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MobileNo"></label>
+                        <input type="number" asp-for="MobileNo" class="form-control" placeholder="Enter Mobile No" autocomplete="off" required />
+                    </div>
+                <div class="form-group">
+                    <label asp-for="State"></label>
+                    <select class="form-select" name="State" id="State">
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Gujrat">Gujrat</option>
+                        <option value="Up">Up</option>
+                        <option value="Mp">Mp</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="City"></label>
+                    <select class="form-select" name="City" id="city">
+                        <option value="Pune">Pune</option>
+                        <option value="Aurangabad">Aurangabad</option>
+                        <option value="Dhule">Dhule</option>
+                        <option value="Nagpur">Nagpur</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DOB"></label>
+                    <input type="date" asp-for="DOB" class="form-control" placeholder="Date_Of_Birth" />
+                </div>
+                    <div class="form-group">
+                        <label asp-for="Gender"></label>
+                        <input type="radio" id="Gender" name="Gender" value="Male" />
+                        <label>Male</label>
+                        <input type="radio" id="Gender" name="Gender" value="Female" />
+                        <label>Female</label>
+                    </div>
+                <div class="form-group">
+                    <label asp-for="Adress"></label>
+                    <input type="text" asp-for="Adress" class="form-control" placeholder="Adress"/>
+                </div>
+                    
+                   
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input type="password" asp-for="Password" class="form-control" placeholder="Enter Password" />
+                </div>
+
+                <br />
+                <!--<a class="text-light btn btn-primary font-weight-bold" asp-action="Login" asp-controller="Project">submit</a>-->
+                   <button type="submit" class="btn btn-primary" value="Submit" style="float:right; background-color:green;">Submit</button>
+            </form>
+            </div>
+
+       </div>
+       </div>
+

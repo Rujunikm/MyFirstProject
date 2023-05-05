@@ -1,0 +1,62 @@
+﻿@model List<MyFirstProject.Models.user>
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<div class="col-4 p-0 justify-content-end">
+    <form asp-controller="Project" asp-action="Index">
+        <span class="btn-group">
+            <input type="search" class="form-control" name="Search" placeholder="Search"/>
+            <input class="p-1 ml-1 btn btn-sm btn-info" type="submit" value="Search"/>
+        </span>
+    </form>
+</div>
+<h1>Users Info</h1>
+<div style="padding-bottom:10%">
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Fname</th>
+                <th>Lname</th>
+                <th>Email</th>
+                <th>MobileNo</th>
+                <th>State</th>
+                <th>City</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Adress</th>
+                <th>Password</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+       
+            @foreach (var Users in Model)
+            {
+                <tr>
+                    <td>@Users.Username</td>
+                    <td>@Users.Fname</td>
+                    <td>@Users.Lname</td>
+                    <td>@Users.Email</td>
+                    <td>@Users.MobileNo</td>
+                    <td>@Users.State</td>
+                    <td>@Users.City</td>
+                    <td>@Users.DOB</td>
+                    <td>@Users.Gender</td>
+                    <td>@Users.Adress</td>
+                    <td>@Users.Password</td>
+                    <td>
+                    <a asp-action="Edit" asp-route-Username="@Users.Username")> Edit</a>|
+                    <a asp-action="Edit" asp-route-Username="@Users.Username">Delete</a>
+                 @*  <td>@Html.ActionLink("Delete","Edit",new{Users.Username})</td>*@
+                 </td>
+
+                    <td></td>
+            </tr>
+         }
+    </tbody>
+</table>
+  
+</div>
+
